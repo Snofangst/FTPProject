@@ -195,7 +195,7 @@ async function deleteFTPServer(){
     }catch(err)
     {
         showNotification(err,3000);
-    }đ
+    }
 }
 async function checkFTPConnectionPerServer(server) {
     var connection={};

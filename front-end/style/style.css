@@ -101,7 +101,7 @@ body{
     position: relative;
     right:180px;
     padding-left: 20px;
-    top:-1px;
+    top:1px;
 }
 .functions-input-2{
     right:30px;
@@ -315,7 +315,7 @@ body{
     border: none; /* No border for the button */
     text-align: left; /* Left align the text */
     outline: none; /* No outline when focused */
-    font-size: 15px; /* Font size of the button */
+    font-size: 20px; /* Font size of the button */
     position: relative; /* To position the icon */
 }
 
