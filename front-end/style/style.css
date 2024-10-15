@@ -315,7 +315,7 @@ body{
     border: none; /* No border for the button */
     text-align: left; /* Left align the text */
     outline: none; /* No outline when focused */
-    font-size: 20px; /* Font size of the button */
+    font-size: 17px; /* Font size of the button */
     position: relative; /* To position the icon */
 }
 
@@ -334,7 +334,7 @@ body{
     transform: translateY(-50%); /* Adjust vertical alignment */
     transition: transform 0.5s; /* Smooth transition */
     float: right;
-    top:13px
+    top:15px
 }
 
 .accordion-button.active .icon {
