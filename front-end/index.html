@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTP Server Management</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/NOAS_SmallIcon.png">
+</head>
+<body class="afacad-flux">
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    <div class="main">
+        <div class="container-1">
+            <div class="functions-container">
+                <div class="functions-section">
+                    <i class="fi fi-rr-inbox-in functions-icon" data-tooltip="Lưu trữ các tệp PDF"></i>
+                    <i class="fi fi-rr-apps-add functions-icon open-button" id="open-modal" data-tooltip="Thêm FTP server"></i>
+                    <i id="ftpchecker" class="fi fi-rr-data-transfer functions-icon" data-tooltip="Kiểm tra kết nối FTP server" onclick=" updateConnection() "></i>
+                    <i id="ftp-delete-button" class="fi fi fi-rr-trash functions-icon" data-tooltip="Xóa FTP server"></i>
+                    <i id="status" class="fi fi-rr-database functions-icon server-off" data-tooltip="Nodejs server đang mở"></i>
+                   
+                    <label class ="functions-label-1 ">Chu kỳ:<span>ngày</span></label>
+                    <input id="dayIn" type="number" value="90" placeholder="Nhập số" min="10"  max="365"  oninput="preventNegative(this)" class="functions-input-1 afacad-flux">
+                    
+                    <label class ="functions-label-2 ">Lúc:</label>
+                    <input id="timeIn" type="time" placeholder="Nhập giờ"  oninvalid="preventNegative(this)" class="functions-input-2 afacad-flux">
+                </div>
+            </div>
+            <div class="grid-container" id="ftpGrid">
+              
+            </div>
+        </div>
+        <div class ="container-2">
+            <div class="noas-logo">
+                <img src="../assets/NOAS-Icon.png">
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                        <i class="fi fi-rr-folder"></i>
+                        HMI số 1
+                    </button>
+                    <div class="accordion-content">
+                        <p>File 1-1.txt</p>
+                        <p>File 1-2.txt</p>
+                        <div class="accordion-item">
+                            <button class="accordion-button">
+                                <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                                <i class="fi fi-rr-folder"></i>
+                                Thư mục số 1-1
+                            </button>
+                            <div class="accordion-content">
+                                <p>File 1-1-1.txt</p>
+                                <p>File 1-1-2.txt</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                        <i class="fi fi-rr-folder"></i>
+                        HMI số 2
+                    </button>
+                    <div class="accordion-content">
+                        <p>File 2-1.txt</p>
+                        <p>File 2-2.txt</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                        <i class="fi fi-rr-folder"></i>
+                        HMI số 3
+                    </button>
+                    <div class="accordion-content">
+                        <p>File 3-1.txt</p>
+                        <p>File 3-2.txt</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                        <i class="fi fi-rr-folder"></i>
+                        HMI số 4
+                    </button>
+                    <div class="accordion-content">
+                        <p>File 4-1.txt</p>
+                        <p>File 4-2.txt</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                        <i class="fi fi-rr-folder"></i>
+                        HMI số 5
+                    </button>
+                    <div class="accordion-content">
+                        <p>File 5-1.txt</p>
+                        <p>File 5-2.txt</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="icon"><i class="fi fi-rr-plus"></i></span> <!-- Plus icon -->
+                        <i class="fi fi-rr-folder"></i>
+                        HMI số 6
+                    </button>
+                    <div class="accordion-content">
+                        <p>File 6-1.txt</p>
+                        <p>File 6-2.txt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Pop-Up -->
+    <div id="form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Thêm FTP server</h2>
+            <form id="ftp-form" class ="ftp-form">
+                <label class="text-label">Name (*)</label></br>
+                <input name="nameinput" id="name-input" required class="text-input afacad-flux" placeholder="Nhập tên thiết bị">
+                </br>
+                <label class="text-label">Host (*)</label></br>
+                <input name="hostinput" id="host-input" required class="text-input afacad-flux" placeholder="Nhập host ip/tên miền">
+                </br>
+                <label class="text-label">User (*)</label></br>
+                <input name="userinput" id="user-input" required class="text-input afacad-flux" placeholder="Nhập tên người dùng">
+                </br>
+                <label class="text-label">Password (*)</label></br>
+                <input name="passwordinput" id="password-input" required class="text-input afacad-flux" placeholder="Nhập tên mật khẩu">
+                </br>
+                <div>
+                    <button type="submit" class="add-button">Thêm mới</button>
+                    <button  id="cancel-modal" type="button" class="cancel-button">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Delete Pop-Up -->
+     <div id="delete-popup">
+        <div class="popup-content">
+            <span class="close-popup-button" id="close-delete-popup">&times;</span>
+            <h2>Xoá FTP server</h2>
+            <p>Xác nhận xóa các FTP server đã chọn!</p>
+            <form id="delete-ftp-form" class ="ftp-form">
+                <div>
+                    <label class="text-label">Password (*)</label></br>
+                    <input type="password" name="passwordinput" id="confirm-password-input" required class="text-input afacad-flux" placeholder="Nhập tên mật khẩu">
+                    <button type="submit" class="add-button">Xác nhận</button>
+                    <button  id="cancel-delete-popup" type="button" class="cancel-button">Hủy</button>
+                </div>
+            </form>
+        </div>
+     </div>
+    <script  src="./script/script.js"> </script>
+     <script src="./script/modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "Days": 90,
+  "Timeout": 5000,
+  "BackupFolder": "BackupData",
+  "UploadFolders": [
+    "UploadData",
+    "PDFData"
+  ],
+  "Password": "$2b$10$puQsIaY9uJRgK37QNowKFOcfYS7MbbHXjcBo.D3DsLfQclm8NsyKe",
+  "UploadedFolder": "UploadedData",
+  "ServerLog": "Log",
+  "ScheduleTime": {
+    "hours": 16,
+    "minutes": 26
+  },
+  "FTPList": [
+    {
+      "host": "192.168.6.111",
+      "username": "HIEN",
+      "password": "123",
+      "name": "HMI số 2",
+      "code": "ExNjjznZnL1HKd#OaFQpepvhHqMmgyOckY1$O2et!LHIl8XS%U"
+    },
+    {
+      "host": "192.168.6.130",
+      "username": "admin",
+      "password": "123",
+      "name": "HMI số 3",
+      "code": "aThr#Kws!w!cqureW4ETPQTZ4of8LolnG%18gQlhXkN%dnP7pL"
+    },
+    {
+      "host": "192.168.6.110",
+      "username": "HIEN",
+      "password": "123",
+      "name": "HMI số 4",
+      "code": "PcefQ&Df4%ohDsEyKWxwPxdIs!EUl&FFIn?L1gGal2cRI$6e4N"
+    },
+    {
+      "host": "192.168.6.187",
+      "username": "kyle",
+      "password": "123",
+      "name": "HMI số 6",
+      "code": "l$$Wt3oJ4ljcjdtvCLC%LWXkQ1RBZVLdRZ$T$Trvu?T3ffEjn8"
+    },
+    {
+      "host": "192.168.6.151",
+      "username": "shane",
+      "password": "123",
+      "name": "HMI số 7",
+      "code": "?KS6X9MFNaY7ROymCt8pF?5V?xX?yzp7H@P!6bcCfYG3ycJi%U"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+body{
+    background-color:aliceblue;
+}
+.main{
+    width:90vw;
+    height:90vh;
+    display: flex;
+    background-color: white;
+    border: 0.1px solid rgb(234, 232, 232);
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.main .container-1{
+    width:80%;
+    height:100%;
+    display: inline-block;
+    border-radius: 10px;
+}
+.main .container-2{
+    width:20%;
+    height:100%;
+    background-color:azure;
+    border-left: 0.5px solid aliceblue;
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+}
+.functions-container{
+    
+    width:100%;
+    height:80px;
+   
+}
+.functions-section{
+    position: relative;
+    top:30px;
+    left:25px
+}
+.functions-icon {
+    font-size: 20px; 
+    padding: 10px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+    position: relative; /* Needed for positioning the tooltip */
+    color: gray;
+    cursor: pointer;
+}
+
+.functions-icon:hover {
+    background-color: rgb(245, 244, 244);
+    border-radius: 10px;
+    color: black;
+}
+
+/* Tooltip styling */
+.functions-icon::after {
+    content: attr(data-tooltip);  /* Tooltip text */
+    position: absolute;            /* Absolute positioning relative to the icon */
+    top: -30px;                    /* Position the tooltip above the icon */
+    left: 50%;                     /* Center horizontally */
+    transform: translateX(-50%);   /* Adjust to perfectly center the tooltip */
+    background-color: black;       /* Background color of the tooltip */
+    color: white;                  /* Text color */
+    padding: 5px 10px;             /* Padding around the text */
+    border-radius: 5px;            /* Rounded corners */
+    white-space: nowrap;           /* Keep tooltip on one line */
+    opacity: 0;                    /* Initially hide the tooltip */
+    pointer-events: none;          /* Prevent mouse interaction with the tooltip */
+    transition: opacity 0.3s ease; /* Smooth fade-in transition */
+    font-size: 12px;               /* Font size of tooltip text */
+    z-index: 1;                    /* Ensure the tooltip appears on top */
+}
+
+.functions-icon:hover::after {
+    opacity: 1; /* Show the tooltip on hover */
+}
+.functions-label-1{
+    float: right;
+    position: relative;
+    right:140px;
+    padding-left: 20px;
+    top:1px;
+}
+.functions-label-1 span{
+    position: relative;
+    right:-75px;
+}
+.functions-input-1{
+    right:5px;
+    float: right;
+    border-radius: 5px; 
+    height:25px;
+    top:-3px;
+    position: relative;
+    width:50px;
+    text-align: right;
+}
+.functions-label-2{
+    float: right;
+    position: relative;
+    right:180px;
+    padding-left: 20px;
+    top:-1px;
+}
+.functions-input-2{
+    right:30px;
+    float: right;
+    border-radius: 5px; 
+    height:25px;
+    top:-3px;
+    position: relative;
+    width:90px;
+    text-align: right;
+}
+.afacad-flux {
+    font-family: "Afacad Flux", sans-serif;
+}
+.grid-container {
+    display: grid;
+    width: 95%;
+    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Space between grid items */
+    overflow-y: scroll;
+    max-height: 80%;
+    padding-right: 5px;
+}
+
+.grid-item {
+    background-color: white; /* Background color for the grid items */
+    padding: 20px; /* Padding inside grid items */
+    text-align: left; /* Center text */
+    border: 1px solid #333; /* Border for visual clarity */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding-top:30px;
+    position: relative;
+}
+.grid-item .fi-rr-pager{
+    position: relative;
+    top:2px;
+    font-size: 25px;
+}
+.grid-item .fi-rr-info{
+    position: absolute;
+    font-size: 15px;
+    top:5px;
+    right:5px;
+    color:gray
+}
+.grid-item .fi-rr-info:hover{
+    color: black;
+}
+.icon-tt {
+    font-size: 24px; /* Size of the icon */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative; /* Position relative for tooltip */
+}
+
+.tooltip {
+    visibility: hidden; /* Hidden by default */
+    width: 200px; /* Width of the tooltip */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside tooltip */
+    position: absolute; /* Absolute position */
+    z-index: 1; /* Sit on top */
+    bottom: 50%; /* Position vertically centered */
+    right: 125%; /* Position to the left of the icon */
+    transform: translateY(83%); /* Adjust tooltip vertically to align */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s; /* Fade in transition */
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 15%; /* Align the arrow vertically with the tooltip */
+    left: 100%; /* Position the arrow to the right edge of the tooltip */
+    margin-top: -5px; /* Offset to center the arrow vertically */
+    border-width: 5px; /* Size of the arrow */
+    border-style: solid;
+    border-color: transparent transparent transparent #333; /* Left-pointing arrow with a background color matching the tooltip */
+}
+
+/* Show tooltip on hover over the icon */
+.icon-tt:hover .tooltip {
+    visibility: visible; /* Show tooltip on hover */
+    opacity: 1; /* Fade in effect */
+}
+.grid-item span{
+    font-size: 17px;
+    padding-left: 8px;
+    top:-5px;
+    position: relative;
+}
+
+.grid-item .connected{
+    float:right;
+    top:1px;
+    position: relative;
+    font-size: 20px;
+    color:lawngreen;
+    right:10px
+}
+.grid-item .connected::after {
+    content: "Connected"/*attr(data-tooltip)*/;  /* Tooltip text */
+    position: absolute;            /* Absolute positioning relative to the icon */
+    top: -30px;                    /* Position the tooltip above the icon */
+    left: 50%;                     /* Center horizontally */
+    transform: translateX(-50%);   /* Adjust to perfectly center the tooltip */
+    background-color: black;       /* Background color of the tooltip */
+    color: white;                  /* Text color */
+    padding: 5px 10px;             /* Padding around the text */
+    border-radius: 5px;            /* Rounded corners */
+    white-space: nowrap;           /* Keep tooltip on one line */
+    opacity: 0;                    /* Initially hide the tooltip */
+    pointer-events: none;          /* Prevent mouse interaction with the tooltip */
+    transition: opacity 0.3s ease; /* Smooth fade-in transition */
+    font-size: 12px;               /* Font size of tooltip text */
+    z-index: 1;                    /* Ensure the tooltip appears on top */
+}
+.grid-item .connected:hover::after {
+    opacity: 1;                    /* Show the tooltip on hover */
+}
+.grid-item .disconnected{
+    float:right;
+    position: relative;
+    font-size: 20px;
+    color: red;
+    right:10px;
+    top:1px;
+}
+.grid-item .disconnected::after {
+    content: attr(data-error);  /* Tooltip text */
+    position: absolute;            /* Absolute positioning relative to the icon */
+    top: -30px;                    /* Position the tooltip above the icon */
+    left: 50%;                     /* Center horizontally */
+    transform: translateX(-50%);   /* Adjust to perfectly center the tooltip */
+    background-color: black;       /* Background color of the tooltip */
+    color: white;                  /* Text color */
+    padding: 5px 10px;             /* Padding around the text */
+    border-radius: 5px;            /* Rounded corners */
+    white-space: nowrap;           /* Keep tooltip on one line */
+    opacity: 0;                    /* Initially hide the tooltip */
+    pointer-events: none;          /* Prevent mouse interaction with the tooltip */
+    transition: opacity 0.3s ease; /* Smooth fade-in transition */
+    font-size: 12px;               /* Font size of tooltip text */
+    z-index: 1;                       /* Ensure the tooltip appears on top */
+    max-width: 100px;
+    text-align: center;        /* Fallback for older browsers */
+}
+.grid-item .disconnected:hover::after {
+    opacity: 1;                    /* Show the tooltip on hover */
+}
+.grid-item .pending{
+    float:right;
+    position: relative;
+    font-size: 20px;
+    color: rgb(244, 217, 10);
+    right:10px;
+    top:1px;
+}
+.grid-item .pending::after {
+    content: "In queue";  /* Tooltip text */
+    position: absolute;            /* Absolute positioning relative to the icon */
+    top: -30px;                    /* Position the tooltip above the icon */
+    left: 50%;                     /* Center horizontally */
+    transform: translateX(-50%);   /* Adjust to perfectly center the tooltip */
+    background-color: black;       /* Background color of the tooltip */
+    color: white;                  /* Text color */
+    padding: 5px 10px;             /* Padding around the text */
+    border-radius: 5px;            /* Rounded corners */
+    white-space: nowrap;           /* Keep tooltip on one line */
+    opacity: 0;                    /* Initially hide the tooltip */
+    pointer-events: none;          /* Prevent mouse interaction with the tooltip */
+    transition: opacity 0.3s ease; /* Smooth fade-in transition */
+    font-size: 12px;               /* Font size of tooltip text */
+    z-index: 1;                    /* Ensure the tooltip appears on top */
+}
+.grid-item .pending:hover::after {
+    opacity: 1;                    /* Show the tooltip on hover */
+}
+.grid-item .loading{
+    float:right;
+    position: relative;
+    color: rgb(244, 217, 10);
+    right:10px;
+    top:1px;
+    width:25px;
+    height:25px
+}
+
+.accordion {
+    max-width: 600px; /* Maximum width of the accordion */
+    margin: 20px auto; /* Centering the accordion */
+    overflow-y: auto;
+    max-height: 85%;
+}
+
+.accordion-item {
+    margin-bottom: 1px; /* Space between accordion items */
+}
+
+.accordion-button {
+    background-color:azure;
+    color: #444; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 15px; /* Padding inside the button */
+    width: 100%; /* Full width of the button */
+    border: none; /* No border for the button */
+    text-align: left; /* Left align the text */
+    outline: none; /* No outline when focused */
+    font-size: 15px; /* Font size of the button */
+    position: relative; /* To position the icon */
+}
+
+.accordion-button:hover {
+    background-color: #ddd; /* Change background color on hover */
+}
+
+.accordion-content {
+    padding: 0 15px; /* Padding for the content */
+    display: none; /* Hide content by default */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.icon {
+    position: relative; /* Positioning the icon */
+    transform: translateY(-50%); /* Adjust vertical alignment */
+    transition: transform 0.5s; /* Smooth transition */
+    float: right;
+    top:13px
+}
+
+.accordion-button.active .icon {
+    transform: translateY(-50%) rotate(45deg); /* Rotate the icon when active */
+}
+
+.noas-logo{
+    width:100%;
+    height:50px;
+    padding-top: 20px;
+}
+.noas-logo img{
+    display: block; 
+    margin: 0 auto;
+    max-width: 60%; 
+    height: auto;
+}
+/*POP-UP*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.text-input{
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    position: relative;
+    left:0px;
+    width: 95%;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.text-label{
+    text-align: right;
+}
+.add-button{
+    border-radius: 8px;
+    height: 40px;
+    background-color: rgb(10, 163, 10);
+    color: white;
+    font-weight: bold;
+    border:1px solid lightslategray;
+    padding: 8px;
+    min-width:150px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 15px;
+}
+.add-button:hover{
+    background-color: rgb(22, 149, 22);
+}
+.cancel-button{
+    font-family: "Afacad Flux", sans-serif;
+    border-radius: 8px;
+    height: 40px;
+    background-color: hsl(8, 85%, 46%);
+    color: white;
+    font-weight: bold;
+    border:1px solid lightslategray;
+    padding: 8px;
+    min-width:120px;
+    float: right;
+    position: relative;
+    right:0px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.cancel-button:hover{
+    background-color: rgb(193, 40, 23);
+}
+.server-on{
+    color:limegreen;
+    top:1px;
+}
+.server-off{
+    color:rgb(213, 0, 0);
+    top:1px;
+}
+.notification {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    animation: fadeIn 0.5s;
+}
+
+.notification button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.error-message{
+    color:red;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    top:-5px   
+}
+.error-border {
+    border-color: red !important;
+}
+.ftp-form{
+    margin: 10px 0px 50px;
+}
+.delete-checkbox{
+    position:absolute;
+    border-radius: 15px;
+    top:3px;
+    left:2px;
+    accent-color: rgb(247, 53, 28);
+}
+.fi-rr-folder{
+    font-size: 18px;
+    top:3px;
+    position: relative;
+    padding-right:5px
+}
+.fi-rr-trash{
+    display:none;
+}
+#delete-popup{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+}
+.popup-content{
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+}
+.fi-rr-rotate-square{
+    float: right;
+    top:1px
+}
+.close-popup-button{
+    color: #aaa;
+    right:-10px;
+    top:-20px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+.close-popup-button:hover{
+    color: #0e0e0e;
+}

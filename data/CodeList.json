@@ -1,0 +1,8 @@
+{
+    "codelist":[
+        {"Message":"Success","Code":200},
+        {"Message":"Existed","Code":401},
+        {"Message":"Something Went Wrong!","Code":402},
+        {"Message":"Error Details Not Listed","Code":403}
+    ]
+}
