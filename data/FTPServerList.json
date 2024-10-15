@@ -48,6 +48,13 @@
       "password": "123",
       "name": "HMI số 7",
       "code": "?KS6X9MFNaY7ROymCt8pF?5V?xX?yzp7H@P!6bcCfYG3ycJi%U"
+    },
+    {
+      "host": "192.168.6.108",
+      "username": "100",
+      "password": "200",
+      "name": "Máy tính của Hiền",
+      "code": "&CtU!t#8XV8xuQ@FC@IeuCI8A@NWU6%rw6ZDuMDQdeVJoAuZ3n"
     }
   ]
 }

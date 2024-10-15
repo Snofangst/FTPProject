@@ -1,4 +1,5 @@
 var nodeport=3000;
+var server ="http://localhost:3000"
 // Get modal element
 const modal = document.getElementById("form-modal");
 // Get open modal button
@@ -78,7 +79,7 @@ ftpForm.addEventListener('submit', async function (event) {
     };
     // Post the data to the server
     try {
-        const response = await fetch('http://localhost:3000/api/json/add', {
+        const response = await fetch(server+'/api/json/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Ensure it's JSON

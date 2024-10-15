@@ -1,6 +1,7 @@
 let execCount=0;
 var nodeport=3000;
 var deletedarray= [];
+var server ="http://localhost:3000"
 generateGridItems();
 updateConnection();
 function preventNegative(input) {
@@ -28,7 +29,7 @@ document.querySelectorAll('.accordion-button').forEach(button => {
     });
 });
 function checkNodeStatus() {
-    fetch('http://localhost:'+nodeport+'/status') // Change to your server's URL
+    fetch(server+'/status') // Change to your server's URL
     .then(response => {
         if (response.ok) {
             document.getElementById('status').classList.remove('server-off');
@@ -52,7 +53,7 @@ setInterval(checkNodeStatus, 1000); // Check every second
 async function checkConnection(requestBody)
 {
     var connection={};
-    await fetch('http://localhost:'+nodeport+'/api/checkConnection', {
+    await fetch(server+'/api/checkConnection', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -131,7 +132,7 @@ async function fetchJSONData(url) {
 }
 // Usage example
 async function getJsonData() {
-    const url = "http://localhost:"+nodeport+"/api/json"; // Your API endpoint
+    const url = server+"/api/json"; // Your API endpoint
     try {
         const data = await fetchJSONData(url); // Fetch and get JSON data
       
@@ -162,7 +163,7 @@ async function deleteFTPServer(){
                code:code
             };
             try {
-                const response = await fetch('http://localhost:3000/api/json/remove', {
+                const response = await fetch(server+'/api/json/remove', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json', // Ensure it's JSON
@@ -189,8 +190,7 @@ async function deleteFTPServer(){
     }catch(err)
     {
         showNotification(err,3000);
-    }
-   
+    }đ
 }
 async function checkFTPConnectionPerServer(server) {
     var connection={};
