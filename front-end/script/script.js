@@ -109,7 +109,7 @@ async function addNewFTPDisplay(item,parentContainer)
         <i class="fi fi-rr-info icon-tt">
             <div class="tooltip">
                 Host: ${item.host}<br>
-                User: ${item.username}<br>
+                User: ${item.username||item.user}<br>
                 Password: ${item.password}
             </div>
         </i>`;
