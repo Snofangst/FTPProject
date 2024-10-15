@@ -1,7 +1,7 @@
 let execCount=0;
 var nodeport=3000;
 var deletedarray= [];
-var server ="http://localhost:3000"
+var server ="https://stunning-yodel-44grxr7xggq2qvxj-3000.app.github.dev"
 generateGridItems();
 updateConnection();
 function preventNegative(input) {
@@ -185,6 +185,11 @@ async function deleteFTPServer(){
                 showNotification(error, 5000); // Show connection error
             }
            
+        }
+        if(deletedarray.length==0)
+        {
+            var deleteButton =document.getElementById("ftp-delete-button");
+            deleteButton.style.display="none"
         }
         // await Promise.all(promises);
     }catch(err)

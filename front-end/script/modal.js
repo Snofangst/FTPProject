@@ -1,5 +1,5 @@
 var nodeport=3000;
-var server ="http://localhost:3000"
+var server ="https://stunning-yodel-44grxr7xggq2qvxj-3000.app.github.dev"
 // Get modal element
 const modal = document.getElementById("form-modal");
 // Get open modal button

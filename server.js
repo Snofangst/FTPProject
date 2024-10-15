@@ -96,7 +96,14 @@ app.post('/api/json/remove', async  (req, res) => {
     else
         return res.status(400).json({result});
 });
-
+app.use((req, res, next) => {
+    const apiKey = req.headers['authorization'];
+    if (apiKey === 'Tie<P1<:eBu<JV%v$z:x\eMKI~Geyc9M0e$q[s0wyh197&yspoQU#nLfCDWASDAXZaxjyu1354=G`') {
+        next(); // Allow the request
+    } else {
+        res.status(403).json({ message: 'Forbidden: Invalid API key' });
+    }
+});
 // Start the server
 app.listen(PORT, () => {
     console.clear();
