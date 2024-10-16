@@ -35,6 +35,7 @@ function checkNodeStatus() {
             document.getElementById('status').classList.remove('server-off');
             document.getElementById('status').classList.add('server-on');
             document.getElementById('status').setAttribute('data-tooltip', "NodeJS server đang mở");
+            generateGridItems()
         } else {
             document.getElementById('status').classList.remove('server-on');
             document.getElementById('status').classList.add('server-off');
@@ -91,7 +92,8 @@ async function generateGridItems() {
     timeInput.setAttribute("value",data.ScheduleTime.hours+":"+data.ScheduleTime.minutes);
     for (const item of data.FTPList) {
         // Create grid item
-        await addNewFTPDisplay(item,gridContainer);
+        if(!document.getElementById(item.code))
+            await addNewFTPDisplay(item,gridContainer);
     }
 }
 async function addNewFTPDisplay(item,parentContainer)
