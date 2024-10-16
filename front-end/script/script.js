@@ -35,7 +35,6 @@ function checkNodeStatus() {
             document.getElementById('status').classList.remove('server-off');
             document.getElementById('status').classList.add('server-on');
             document.getElementById('status').setAttribute('data-tooltip', "NodeJS server đang mở");
-            generateGridItems()
         } else {
             document.getElementById('status').classList.remove('server-on');
             document.getElementById('status').classList.add('server-off');
